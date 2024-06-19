@@ -7,7 +7,7 @@ type ActionType =
 
 export type SortByNameType = { type: 'sort'; payload: SortValuesType }
 
-export type SortValuesType = 'up' |'down'
+export type SortValuesType = 'up' | 'down'
 
 
 export type CheckAgeAcType = { type: 'check'; payload: number }
@@ -27,11 +27,19 @@ const initialState: UserType[] = [
 export const homeWorkReducer = (state: UserType[] = initialState, action: HomeWorkReducerActionType): UserType[] => { // need to fix any
     switch (action.type) {
         case 'sort': { // by name
-            const compareFn = (a:UserType, b:UserType) => {
-                return action.payload === 'up' ? a.age - b.age : b.age - a.age
+            const compareFn = (a: UserType, b: UserType) => {
+                return action.payload === 'up'
+                    ?
+                    a.name < b.name
+                        ? -1
+                        : 1
+                    :
+                    b.name > a.name
+                        ? 1
+                        : -1
             }
 
-            return [...state].sort(compareFn)// need to fix
+            return [...state].sort(compareFn)
         }
         case 'check': {
             return [...state].filter(u => u.age > 18) // need to fix
