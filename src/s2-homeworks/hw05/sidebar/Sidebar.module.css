@@ -2,22 +2,50 @@
 }
 
 .sidebar.open {
+    display: block;
+    background: white;
+    width: 20%;
+    height: 100vh;
+    z-index: 11;
+    position: fixed;
 }
 
 .background {
+    opacity: 0.3;
+    background: transparent;
+    z-index: 10;
 }
 
 .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 30%;
+    flex-direction: column;
 }
+
 
 .nav a {
 }
 
+
 .nav a:hover {
+    color: lightskyblue;
+    text-decoration: underline;
 }
 
-.nav a.active {
+
+
+.active {
+    color: lightskyblue;
+    text-decoration: underline;
 }
+
+.link {
+    color: black;
+}
+
 .close {
 }
 
