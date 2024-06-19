@@ -28,7 +28,7 @@ export const homeWorkReducer = (state: UserType[] = initialState, action: HomeWo
     switch (action.type) {
         case 'sort': { // by name
             const compareFn = (a:UserType, b:UserType) => {
-                return action.payload === 'down' ? a.age - b.age : b.age - a.age
+                return action.payload === 'up' ? a.age - b.age : b.age - a.age
             }
 
             return [...state].sort(compareFn)// need to fix
