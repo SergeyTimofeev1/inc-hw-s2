@@ -51,14 +51,14 @@ const HW13 = () => {
                 if (status === 500) {
                     setCode('Код 500!')
                     setImage(error500)
-                    setText("ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)")
-                    setInfo(e.response.data.errorText)
+                    setInfo("ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)")
+                    setText(e.response.data.errorText)
 
                 } else if (status === 400) {
                     setCode('Код 400!')
-                    setText("ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!")
+                    setInfo("ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!")
                     setImage(error400)
-                    setInfo(e.response.data.errorText)
+                    setText(e.response.data.errorText)
                 } else if ( status === 0) {
                     setImage(errorUnknown)
                     setText("Error")
